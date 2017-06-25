@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Менеджер студентов</string>
+    <string name="app_reg">Регистрация</string>
+    <string name="app_login">Зарегистрироваться</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Отмена</string>
+    <string name="app_sign_up">Войти</string>
+    <string name="LinearViewVertical">Линейный вертикально</string>
+    <string name="LinearViewHorizontal">Линейный горизонтально</string>
+    <string name="GridView">Решетка</string>
+    <string name="StaggeredViewHorizontal">Зиг-заг горизонтально</string>
+    <string name="StaggeredViewVertical">Зиг-заг вертикально</string>
+
+
+</resources>
