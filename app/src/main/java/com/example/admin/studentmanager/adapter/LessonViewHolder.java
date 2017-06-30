@@ -1,43 +1,38 @@
 package com.example.admin.studentmanager.adapter;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.SparseBooleanArray;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.admin.studentmanager.OnListItemCallback;
 import com.example.admin.studentmanager.R;
-import com.example.admin.studentmanager.model.Group;
+import com.example.admin.studentmanager.model.Lesson;
 
 /**
  * Created by admin on 24.06.2017.
  */
 
-class GroupViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+class LessonViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     TextView title;
-    ImageView imgThumb;
     int position;
-    Group mGroup;
+    Lesson mLesson;
     private OnListItemCallback callback;
 
-    public GroupViewHolder(View itemView, OnListItemCallback callback) {
+    public LessonViewHolder(View itemView, OnListItemCallback callback) {
         super(itemView);
         title = (TextView) itemView.findViewById(R.id.tvTitle);
-        imgThumb = (ImageView) itemView.findViewById(R.id.img_row);
         this.callback= callback;
         itemView.setOnClickListener(this);
     }
 
-    public void setData(Group group, int position) {
-        this.title.setText(group.getGroupName());
-        this.imgThumb.setImageResource(group.getImageID());
+    public void setData(Lesson lesson, int position) {
+        this.title.setText(lesson.getName());
         this.position=position;
-        this.mGroup =group;
+        this.mLesson =lesson;
     }
 
     @Override
     public void onClick(View v) {
-        callback.onClick(mGroup);
+        callback.onClick(mLesson);
     }
 }

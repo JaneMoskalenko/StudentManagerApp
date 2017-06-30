@@ -47,9 +47,13 @@ public class SignUpActivity extends AppCompatActivity {
 
                 if (add_user(edtLogin.getText().toString(), edtPassword.getText().toString(),
                         edtPasswordConfirm.getText().toString())){
-                    Intent intent = new Intent(SignUpActivity.this, GettingStartedActivity.class);
+                    Intent intent = new Intent();
                     intent.putExtra("login", edtLogin.getText().toString());
-                    startActivity(intent);
+                    setResult(RESULT_OK, intent);
+                    finish();
+                    /*Intent intent = new Intent(SignUpActivity.this, GettingStartedActivity.class);
+                    intent.putExtra("login", edtLogin.getText().toString());
+                    startActivity(intent);*/
                 } else {
                     Toast.makeText(SignUpActivity.this, "Wrong login or password", Toast.LENGTH_LONG).show();
                 }

@@ -24,11 +24,19 @@
 
     <Button
         android:id="@+id/btnViewStudentList"
-        style="@style/btnAccent"
+        style="../@style/btnAccent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="Просмотр списка студентов"/>
+
+    <Button
+        android:id="@+id/btnViewLessonList"
+        style="@style/btnAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Просмотр занятий"/>
 
 
 </LinearLayout>

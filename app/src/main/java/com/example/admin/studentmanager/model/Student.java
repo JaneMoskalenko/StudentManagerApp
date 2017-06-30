@@ -1,12 +1,12 @@
 package com.example.admin.studentmanager.model;
 
-import com.example.admin.studentmanager.manager.ManagerStudent;
+import com.example.admin.studentmanager.manager.StudentManager;
+import com.example.admin.studentmanager.utils.IdGenerator;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 /**
  * Created by admin on 08.06.2017.
@@ -27,7 +27,7 @@ public class Student implements Serializable {
         this.surname = surname;
         this.dateOfBirth = dateOfBirth;
         this.groupID = groupID;
-        this.id=System.currentTimeMillis();
+        this.id = IdGenerator.generateId();
         this.contacts = new ArrayList<>();
     }
 
@@ -38,7 +38,7 @@ public class Student implements Serializable {
         this.dateOfBirth = dateOfBirth;
         this.groupID = groupID;
         this.imageID = imageID;
-        this.id=System.currentTimeMillis();
+        this.id=IdGenerator.generateId();
         this.contacts = new ArrayList<>();
     }
 
@@ -97,18 +97,6 @@ public class Student implements Serializable {
 
     public void setImageID(int imageID) {
         this.imageID = imageID;
-    }
-
-
-    public static ArrayList<Student> getData(){
-        ArrayList<Student> dataList = new ArrayList<>();
-        int [] images =DummyType.getImages();
-
-        for (int i=0; i< DummyType.FIRSTNAMES.length; i++) {
-            Student student = ManagerStudent.addDummyStudent(images[i]);
-            dataList.add(student);
-        }
-        return dataList;
     }
 
     @Override

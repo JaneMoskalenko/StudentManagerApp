@@ -1,5 +1,7 @@
 package com.example.admin.studentmanager.model;
 
+import com.example.admin.studentmanager.utils.IdGenerator;
+
 /**
  * Created by admin on 08.06.2017.
  */
@@ -7,8 +9,8 @@ public class Subject {
     private Long id;
     private String subjectName;
 
-    public Subject(Long id, String sublectName) {
-        this.id=System.currentTimeMillis();
+    public Subject(String sublectName) {
+        this.id = IdGenerator.generateId();
         this.subjectName = sublectName;
     }
 

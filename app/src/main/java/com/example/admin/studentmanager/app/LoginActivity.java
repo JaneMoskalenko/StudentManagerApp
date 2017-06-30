@@ -13,8 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.admin.studentmanager.R;
-import com.example.admin.studentmanager.adapter.RecyclerAdapterGroupList;
-import com.example.admin.studentmanager.manager.ManagerStudent;
+import com.example.admin.studentmanager.manager.StudentManager;
 import com.example.admin.studentmanager.model.DummyType;
 import com.example.admin.studentmanager.model.Group;
 import com.example.admin.studentmanager.model.Student;
@@ -22,7 +21,6 @@ import com.example.admin.studentmanager.model.Student;
 import java.util.HashMap;
 import java.util.Random;
 
-import static com.example.admin.studentmanager.manager.GroupManager.createDummyGroup;
 import static com.example.admin.studentmanager.manager.GroupManager.sGroups;
 
 /**
@@ -54,17 +52,6 @@ public class LoginActivity extends AppCompatActivity {
         edtLogin = (EditText) findViewById(R.id.edtLogin);
         edtPassword = (EditText) findViewById(R.id.edtPassword);
         tvLogin = (TextView) findViewById(R.id.tvLogin);
-
-        initGroups();
-        Log.d(TAG, "Size of sGroup: " + sGroups.size());
-        int [] images =DummyType.getImages();
-        Student student = ManagerStudent.addDummyStudent(images[3]);
-        Log.d(TAG, student.toString());
-       // tvLogin.setText(sGroups.size());
-
-      //  Toast.makeText(LoginActivity.this, sGroups.size().toString, Toast.LENGTH_LONG).show();
-
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,9 +70,16 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,1);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+       if (data == null) return;
+        String name = data.getStringExtra("login");
+        edtLogin.setText(name);
     }
 
     private void initGroups() {

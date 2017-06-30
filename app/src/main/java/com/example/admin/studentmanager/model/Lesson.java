@@ -1,5 +1,7 @@
 package com.example.admin.studentmanager.model;
 
+import com.example.admin.studentmanager.utils.IdGenerator;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,8 +20,9 @@ public class Lesson {
     private String lector;
     private Long groupId;
 
-    public Lesson(Long id, String name, Date dateBegin, Date dateEnd, String auditorium, String description, Long subjectId, String lector, Long groupId) {
-        this.id=System.currentTimeMillis();
+    public Lesson(String name, Date dateBegin, Date dateEnd, String auditorium, String description,
+                  Long subjectId, String lector, Long groupId) {
+        this.id= IdGenerator.generateId();
         this.name = name;
         this.dateBegin = dateBegin;
         this.dateEnd = dateEnd;
