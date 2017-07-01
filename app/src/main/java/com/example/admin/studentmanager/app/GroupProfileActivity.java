@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.admin.studentmanager.OnListItemCallback;
 import com.example.admin.studentmanager.R;
 import com.example.admin.studentmanager.adapter.StudentRecyclerViewAdapter;
+import com.example.admin.studentmanager.app.Student.StudentProfileActivity;
 import com.example.admin.studentmanager.manager.StudentManager;
 import com.example.admin.studentmanager.model.Group;
 import com.example.admin.studentmanager.model.Lesson;

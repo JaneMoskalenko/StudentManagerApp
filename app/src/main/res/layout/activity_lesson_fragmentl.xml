@@ -13,14 +13,20 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
             android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_add_lesson"
+                style="@style/btnAccent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Добавить предмет"/>
 
             <TextView
                 style="@style/tvSignUp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Введите наименование предмета"/>
@@ -28,24 +34,11 @@
             <EditText
                 android:id="@+id/edtLessonListUpdate"
                 style="@style/edtSignUp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btn_add_lesson"
-                style="@style/btnAccent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Добавить предмет"/>
-
-        </LinearLayout>
     </LinearLayout>
 
     <fragment

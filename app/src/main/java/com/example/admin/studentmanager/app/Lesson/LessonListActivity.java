@@ -1,12 +1,10 @@
-package com.example.admin.studentmanager.app;
+package com.example.admin.studentmanager.app.Lesson;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -18,9 +16,7 @@ import android.widget.Toast;
 
 import com.example.admin.studentmanager.OnListItemCallback;
 import com.example.admin.studentmanager.R;
-import com.example.admin.studentmanager.adapter.GroupRecyclerViewAdapter;
 import com.example.admin.studentmanager.adapter.LessonRecyclerViewAdapter;
-import com.example.admin.studentmanager.manager.GroupManager;
 import com.example.admin.studentmanager.manager.LessonManager;
 import com.example.admin.studentmanager.model.Group;
 import com.example.admin.studentmanager.model.Lesson;
@@ -56,7 +52,7 @@ public class LessonListActivity extends Activity implements OnListItemCallback {
             }
         });
 
-       /* edtLessonListUpdate.addTextChangedListener(new TextWatcher() {
+        edtLessonListUpdate.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
@@ -70,7 +66,7 @@ public class LessonListActivity extends Activity implements OnListItemCallback {
             public void afterTextChanged(Editable s) {
                 setUpRecyclerView(edtLessonListUpdate.getText().toString());
             }
-        });*/
+        });
 
         recyclerView = (RecyclerView) fragment.getView().findViewById(R.id.recyclerView);
         setUpRecyclerView("");

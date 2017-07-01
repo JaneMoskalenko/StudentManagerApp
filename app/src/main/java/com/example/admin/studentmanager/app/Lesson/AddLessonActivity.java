@@ -1,9 +1,10 @@
-package com.example.admin.studentmanager.app;
+package com.example.admin.studentmanager.app.Lesson;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -15,6 +16,12 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.admin.studentmanager.R;
+import com.example.admin.studentmanager.app.GettingStartedActivity;
+import com.example.admin.studentmanager.manager.LessonManager;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by admin on 30.06.2017.
@@ -25,6 +32,7 @@ public class AddLessonActivity extends Activity {
     EditText edt_setTime, edt_setDate;
     Button btn_submit_add_lesson, btn_setTime, btn_setDate;
     String mTime, mDate;
+    Date dateLesson;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,7 +56,7 @@ public class AddLessonActivity extends Activity {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                       //  Toast.makeText(AddLessonActivity.this, hourOfDay + " " + minute, Toast.LENGTH_LONG).show();
-                        mTime = hourOfDay + " " + minute;
+                        mTime = hourOfDay + ":" + minute;
                         edt_setTime.setText(mTime);
                     }
                 };
@@ -63,7 +71,6 @@ public class AddLessonActivity extends Activity {
                 DatePickerDialog.OnDateSetListener mylistener = new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                      //  Toast.makeText(AddLessonActivity.this, year + " " + month + " " + dayOfMonth, Toast.LENGTH_LONG).show();
                         mDate = year + "." + month + "." + dayOfMonth;
                         edt_setDate.setText(mDate);
                     }
@@ -83,7 +90,21 @@ public class AddLessonActivity extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-                        Toast.makeText(AddLessonActivity.this, "Урок добавлен", Toast.LENGTH_LONG).show();
+                        SimpleDateFormat format_Date = new SimpleDateFormat("yyyy.MM.dd hh:mm");
+                        try {
+                            dateLesson = format_Date.parse(mDate +" "+ mTime);
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                        if (LessonManager.addNewLesson(edt_setLessonTitle.getText().toString(),
+                                dateLesson, dateLesson, "",
+                                edt_setLessonDescription.getText().toString())) {
+                            Toast.makeText(AddLessonActivity.this, "Урок добавлен", Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(AddLessonActivity.this, LessonListActivity.class);
+                            startActivity(intent);
+                        }
+                        else
+                            Toast.makeText(AddLessonActivity.this, "Произошла ошибка. Урок не добавлен", Toast.LENGTH_LONG).show();
                     }
                 });
                 alertbuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

@@ -1,12 +1,8 @@
-package com.example.admin.studentmanager.app;
+package com.example.admin.studentmanager.app.Login;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,10 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.admin.studentmanager.R;
-
-import java.util.HashMap;
-
-import static com.example.admin.studentmanager.app.LoginActivity.sLogins;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -94,7 +86,7 @@ public class SignUpActivity extends AppCompatActivity {
             checkFields = true;
             Toast.makeText(SignUpActivity.this, "Match password, " + login,
                     Toast.LENGTH_LONG).show();
-            sLogins.put(login, password);
+            LoginActivity.sLogins.put(login, password);
         }
         return checkFields;
     }

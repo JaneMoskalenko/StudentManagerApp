@@ -9,20 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".app.LoginActivity">
+        <activity android:name=".app.Login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity android:name=".app.GettingStartedActivity"/>
-        <activity android:name=".app.SignUpActivity"/>
+        <activity android:name=".app.Login.SignUpActivity"/>
         <activity android:name=".app.GroupListActivity"/>
-        <activity android:name=".app.StudentListActivity"/>
+        <activity android:name=".app.Student.StudentListActivity"/>
         <activity android:name=".app.GroupProfileActivity"/>
-        <activity android:name=".app.StudentProfileActivity"/>
-        <activity android:name=".app.LessonListActivity"/>
-        <activity android:name=".app.AddLessonActivity"/>
+        <activity android:name=".app.Student.StudentProfileActivity"/>
+        <activity android:name=".app.Lesson.LessonListActivity"/>
+        <activity android:name=".app.Lesson.AddLessonActivity"/>
     </application>
 
 </manifest>

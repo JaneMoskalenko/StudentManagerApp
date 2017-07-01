@@ -13,15 +13,17 @@
 
         <TextView
             style="@style/tvOrdinary"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Date"/>
 
         <EditText
             android:id="@+id/edt_setDate"
             style="@style/edtOrdinary"
             android:layout_width="150dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"/>
 
         <Button
             android:id="@+id/btn_setDate"
@@ -38,15 +40,17 @@
 
         <TextView
             style="@style/tvOrdinary"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Time"/>
 
         <EditText
             android:id="@+id/edt_setTime"
             style="@style/edtOrdinary"
             android:layout_width="150dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"/>
 
         <Button
             android:id="@+id/btn_setTime"

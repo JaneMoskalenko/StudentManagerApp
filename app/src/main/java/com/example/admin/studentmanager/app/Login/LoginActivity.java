@@ -1,10 +1,9 @@
-package com.example.admin.studentmanager.app;
+package com.example.admin.studentmanager.app.Login;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,10 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.admin.studentmanager.R;
-import com.example.admin.studentmanager.manager.StudentManager;
+import com.example.admin.studentmanager.app.GettingStartedActivity;
 import com.example.admin.studentmanager.model.DummyType;
 import com.example.admin.studentmanager.model.Group;
-import com.example.admin.studentmanager.model.Student;
 
 import java.util.HashMap;
 import java.util.Random;

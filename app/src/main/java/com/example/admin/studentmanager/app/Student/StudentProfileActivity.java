@@ -1,4 +1,4 @@
-package com.example.admin.studentmanager.app;
+package com.example.admin.studentmanager.app.Student;
 
 import android.app.Activity;
 import android.content.Intent;

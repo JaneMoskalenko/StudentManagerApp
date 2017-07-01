@@ -7,9 +7,10 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.admin.studentmanager.R;
+import com.example.admin.studentmanager.app.Lesson.LessonListActivity;
+import com.example.admin.studentmanager.app.Student.StudentListActivity;
 import com.example.admin.studentmanager.manager.GroupManager;
 import com.example.admin.studentmanager.manager.LessonManager;
 import com.example.admin.studentmanager.manager.StudentManager;

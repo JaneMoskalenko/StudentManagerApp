@@ -33,6 +33,10 @@ public class LessonManager {
         }
     }
 
+    public static int  getLessonSize() {
+        return sLessons.size();
+    }
+
     public static Lesson createDummyLesson() {
         Log.d(TAG, " on create Dummy lesson " + DummyType.SUBJECTNAMES[getRandomNumberOfLesson()] + "  " + subjectNameLength);
         return new Lesson(DummyType.LESSONNAMES[getRandomNumberOfLesson()],
@@ -63,6 +67,26 @@ public class LessonManager {
             }
         }
         return dataList;
+    }
+
+    private static Lesson prepareNewLesson(String name, Date dateBegin, Date dateEnd,
+                                      String auditorium, String description)  {
+        Log.d(TAG, " on add new lesson " + DummyType.SUBJECTNAMES[getRandomNumberOfLesson()] + "  " + subjectNameLength);
+        return new Lesson(name,
+                dateBegin, dateEnd, auditorium, description,
+                getRandomSubjectID(),
+                DummyType.LECTORNAMES[getRandomNumberOfLector()],
+                getRandomGroupID());
+    }
+
+    public static boolean addNewLesson(String name, Date dateBegin, Date dateEnd,
+                                String auditorium, String description) {
+        Lesson lesson = prepareNewLesson(name, dateBegin, dateEnd, auditorium, description);
+        if (lesson != null) {
+            sLessons.put(lesson.getId(), lesson);
+            return true;
+        }
+        else return false;
     }
 
 }
